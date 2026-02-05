@@ -1,0 +1,26 @@
+## LaTeX - archivos de compilacion
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+
+## PDF compilados
+*.pdf
+
+## Windows Zone.Identifier (NTFS alternate data streams)
+*:Zone.Identifier
