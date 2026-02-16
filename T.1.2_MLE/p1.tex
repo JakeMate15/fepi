@@ -1,8 +1,8 @@
 \section{Introducción}
 
-Dominar la diferencia entre alcance de proyecto y alcance de producto es la base para evitar el crecimiento descontrolado del alcance, el enemigo número uno de los proyectos de software. El alcance de producto define qué se construye (características, funciones, requisitos); el alcance de proyecto define cómo se construye (trabajo, recursos, cronograma, presupuesto) \cite{deepprojectmanager}. Confundirlos genera descontrol. Este documento ofrece una guía práctica para entender, diferenciar y estimar ambos alcances en el contexto real de la industria del software.
+El alcance de producto define qué se construye (características, funciones, requisitos); el alcance de proyecto define cómo se construye (trabajo, recursos, cronograma, presupuesto) \cite{deepprojectmanager}. Confundirlos genera descontrol. Este documento ofrece una guía práctica para entender, diferenciar y estimar ambos alcances en el contexto real de la industria del software.
 
-\section{Qué es el alcance de proyecto y qué incluye exactamente}
+\section{Alcance de proyecto}
 
 El PMBOK (Project Management Institute) define el alcance de proyecto como ``el trabajo que se realiza para entregar un producto, servicio o resultado con las características y funciones especificadas'' \cite{pmbok}. En otras palabras, abarca todo el esfuerzo necesario para llevar el producto desde la idea hasta la entrega: tareas de desarrollo, reuniones, pruebas, documentación, gestión de cambios, capacitación y soporte.
 
@@ -21,13 +21,7 @@ Una declaración de alcance típica para un proyecto de software incluye estos c
 
 El componente estructural más importante es la Estructura de Desglose del Trabajo (EDT), conocida en inglés como WBS: una descomposición jerárquica de todo el trabajo \cite{mpug}. Para un comercio electrónico, por ejemplo, el nivel 1 es el proyecto completo; el nivel 2 son las fases (Análisis, Diseño, Desarrollo, Pruebas, Despliegue); el nivel 3 son los módulos (interfaz de usuario, servidor, base de datos); y el nivel 4 son paquetes de trabajo específicos (pantalla de inicio de sesión, carrito de compras, pasarela de pago).
 
-\subsection{Ejemplo práctico: Plataforma de comercio electrónico}
-
-El alcance del proyecto incluiría análisis de requisitos con las partes interesadas, diseño de interfaz (esquemas, maquetas, prototipos), desarrollo de la interfaz de usuario y del servidor, integración con sistemas existentes, migración de datos heredados, pruebas (unitarias, de integración, de aceptación, de rendimiento), capacitación a usuarios, despliegue, y soporte posterior al lanzamiento de 30 días. Todo esto es \textit{trabajo del proyecto}, no características del producto.
-
-En metodologías ágiles, el alcance del proyecto se traduce en la lista de pendientes del sprint: el trabajo comprometido para cada iteración. La diferencia clave con el modelo en cascada es que en metodologías ágiles el alcance es variable mientras tiempo y recursos son fijos \cite{atlassian}.
-
-\section{El alcance de producto define el QUÉ, no el CÓMO}
+\section{Alcance de producto}
 
 El PMBOK define el alcance de producto como ``las características y funciones que caracterizan un producto, servicio o resultado'' \cite{izenbridge}. Mientras el alcance de proyecto se mide contra el plan de gestión, el alcance de producto se mide contra los requisitos: ¿cumple el software lo que se especificó? \cite{brainbok}
 
@@ -42,15 +36,15 @@ Estos requisitos se organizan jerárquicamente en épicas (capacidades grandes c
 
 La regla de oro: siempre se define el alcance de producto antes que el de proyecto. El ``qué'' precede al ``cómo'' \cite{deepprojectmanager}.
 
-\section{Técnicas de estimación que usa la industria hoy}
+\section{Técnicas de estimación}
 
 La estimación de alcance en software combina juicio experto, datos históricos y cada vez más inteligencia artificial. No existe una técnica única; los equipos exitosos combinan varias según el contexto \cite{velvetech}.
 
-\subsection{Planning Poker con puntos de historia}
+\subsection{Planning Poker}
 
 Es el estándar de facto para estimación ágil detallada \cite{planningpoker}. Cada miembro del equipo usa cartas con valores Fibonacci (1, 2, 3, 5, 8, 13, 20...) para estimar la complejidad relativa de historias de usuario. Las cartas se revelan simultáneamente para evitar el sesgo de anclaje. Cuando hay diferencias grandes, se discute y se re-estima. Funciona mejor en planificación de sprint con equipos de 3 a 9 personas.
 
-\subsection{Estimación de Tres Puntos y PERT}
+\subsection{PERT}
 
 Incorporan incertidumbre explícitamente. Cada tarea recibe tres valores: Optimista (O), Más Probable (M) y Pesimista (P) \cite{tutorialspoint}. PERT aplica la fórmula ponderada:
 \[
@@ -58,7 +52,7 @@ E = \frac{O + 4M + P}{6}
 \]
 Ideal para proyectos con alta incertidumbre donde el rango de resultados es amplio.
 
-\subsection{Estimación paramétrica}
+\subsection{COCOMO}
 
 Aplica modelos estadísticos como COCOMO (Modelo Constructivo de Costos) que relacionan variables cuantificables (líneas de código, puntos de función) con esfuerzo y costo \cite{fastercapital}. Requiere datos históricos robustos.
 
@@ -66,7 +60,7 @@ Aplica modelos estadísticos como COCOMO (Modelo Constructivo de Costos) que rel
 
 Gobernados por IFPUG y respaldados por la norma ISO 20926, son el estándar formal para medir el tamaño funcional del software \cite{tutorialspoint}. Analizan entradas externas, salidas, consultas, archivos lógicos internos e interfaces. Son independientes de tecnología pero laboriosos y con curva de aprendizaje pronunciada.
 
-\section{Plataformas y software que dominan la estimación en 2025}
+\section{Plataformas y software}
 
 \subsection{Jira}
 
@@ -84,16 +78,6 @@ Linear se ha posicionado como la alternativa moderna para equipos de ingeniería
 
 ClickUp y Monday.com compiten como plataformas integrales que combinan tareas, documentos, pizarras, metas y chat. ClickUp ofrece sprints con puntos de historia y gráficos de avance, más ClickUp Brain (IA) para generación de tareas \cite{appvizer}. Monday.com incluye bloques de IA que analizan datos pasados para sugerir líneas de tiempo realistas y detección proactiva de riesgos en portafolios.
 
-\section{La IA está transformando la estimación de software}
-
-La tendencia más disruptiva de 2024-2025 es la entrada de la inteligencia artificial en la estimación de alcance. El modelo que predomina es híbrido: la IA genera la línea base y los humanos revisan y ajustan con contexto de negocio \cite{devtimate}.
-
-Devtimate permite subir solicitudes de propuesta, especificaciones o listas de características, y la IA extrae automáticamente módulos, tareas, roles, dependencias y rangos de horas estimadas. Reporta una precisión inicial del 85-90\% que mejora a 95\%+ tras revisión humana. Exporta directamente a Jira, Asana o Excel.
-
-CostGPT.ai, entrenado en más de 2,000 proyectos, genera planes de proyecto completos---características, historias de usuario, hitos, costos y línea de tiempo---a partir de una descripción en lenguaje natural, con precisión reportada superior al 80\% \cite{costgpt}.
-
-SLIM-Estimate (QSM) es la opción empresarial para estimación paramétrica descendente, configurable para metodologías ágiles, inteligencia de negocios e implementaciones de paquetes, con base de datos propietaria de referencias.
-
 \section{Conclusión}
 
-La distinción entre alcance de producto y alcance de proyecto no es académica---es operativa. Confundirlos lleva a crecimiento descontrolado del alcance, presupuestos desbordados y equipos frustrados. El alcance de producto (qué se construye) siempre se define primero; el alcance de proyecto (cómo se construye) se deriva de él. La estimación efectiva combina múltiples técnicas: estimación por tallas o por afinidad para la visión de alto nivel, Planning Poker para la granularidad del sprint, y herramientas de IA como Devtimate o CostGPT para generar líneas base rápidas en fases tempranas. La tendencia de 2025 es clara: las estimaciones evolucionan de documentos estáticos a ``estimaciones vivas'' vinculadas directamente a la lista de pendientes, donde la IA acelera el proceso pero el juicio humano sigue siendo insustituible para el contexto de negocio.
+Diferenciar el alcance de producto (qué se construye) del alcance de proyecto (cómo se construye) es necesario para evitar descontrol en presupuesto, tiempo y equipo. Para estimar el alcance existen técnicas como Planning Poker, PERT, COCOMO y puntos de función, cada una adecuada para distintos contextos. Herramientas como Jira, Azure DevOps, Linear o ClickUp facilitan la gestión de estas estimaciones, y la inteligencia artificial complementa cada vez más el juicio humano en este proceso.
