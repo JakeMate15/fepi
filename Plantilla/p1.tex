@@ -1,0 +1,83 @@
+\section{Introducción}
+
+El alcance de producto define qué se construye (características, funciones, requisitos); el alcance de proyecto define cómo se construye (trabajo, recursos, cronograma, presupuesto) \cite{deepprojectmanager}. Confundirlos genera descontrol. Este documento ofrece una guía práctica para entender, diferenciar y estimar ambos alcances en el contexto real de la industria del software.
+
+\section{Alcance de proyecto}
+
+El PMBOK (Project Management Institute) define el alcance de proyecto como ``el trabajo que se realiza para entregar un producto, servicio o resultado con las características y funciones especificadas'' \cite{pmbok}. En otras palabras, abarca todo el esfuerzo necesario para llevar el producto desde la idea hasta la entrega: tareas de desarrollo, reuniones, pruebas, documentación, gestión de cambios, capacitación y soporte.
+
+Una declaración de alcance típica para un proyecto de software incluye estos componentes:
+
+\begin{itemize}
+    \item La descripción del proyecto establece la justificación de negocio y la visión general.
+    \item Los entregables se dividen en entregables de producto (software funcional, APIs, código fuente) y entregables de gestión (plan de proyecto, reportes de avance, actas).
+    \item Las exclusiones documentan explícitamente lo que NO forma parte del proyecto \cite{projectmanager}.
+    \item Las restricciones definen los límites fijos: presupuesto, plazo, uso obligatorio de infraestructura existente.
+    \item Los supuestos recogen condiciones aceptadas como ciertas para planificar \cite{visor}.
+    \item Los criterios de aceptación establecen las condiciones para que los entregables se consideren completos.
+\end{itemize}
+
+\subsection{Estructura de Desglose del Trabajo (EDT/WBS)}
+
+El componente estructural más importante es la Estructura de Desglose del Trabajo (EDT), conocida en inglés como WBS: una descomposición jerárquica de todo el trabajo \cite{mpug}. Para un comercio electrónico, por ejemplo, el nivel 1 es el proyecto completo; el nivel 2 son las fases (Análisis, Diseño, Desarrollo, Pruebas, Despliegue); el nivel 3 son los módulos (interfaz de usuario, servidor, base de datos); y el nivel 4 son paquetes de trabajo específicos (pantalla de inicio de sesión, carrito de compras, pasarela de pago).
+
+\section{Alcance de producto}
+
+El PMBOK define el alcance de producto como ``las características y funciones que caracterizan un producto, servicio o resultado'' \cite{izenbridge}. Mientras el alcance de proyecto se mide contra el plan de gestión, el alcance de producto se mide contra los requisitos: ¿cumple el software lo que se especificó? \cite{brainbok}
+
+El alcance de producto se compone de dos grandes bloques:
+
+\begin{itemize}
+    \item Los requisitos funcionales definen qué debe hacer el sistema: autenticación de usuarios, procesamiento de transacciones, búsqueda y filtrado, generación de reportes \cite{geeksforgeeks}. Se expresan típicamente como historias de usuario: \textit{``Como comprador, quiero guardar mi tarjeta para pagos futuros''} \cite{altexsoft}.
+    \item Los requisitos no funcionales definen cómo debe comportarse: la página debe cargar en menos de 2 segundos, soportar 1,000 usuarios concurrentes, garantizar 99.9\% de disponibilidad, y funcionar en iOS 15+ y Android 12+.
+\end{itemize}
+
+Estos requisitos se organizan jerárquicamente en épicas (capacidades grandes como ``Sistema de pagos''), funcionalidades (como ``Pago con tarjeta de crédito'') e historias de usuario (unidades de trabajo del usuario). En Scrum, todo esto vive en la lista de producto, una lista priorizada y dinámica propiedad del dueño del producto \cite{scrumguides}.
+
+La regla de oro: siempre se define el alcance de producto antes que el de proyecto. El ``qué'' precede al ``cómo'' \cite{deepprojectmanager}.
+
+\section{Técnicas de estimación}
+
+La estimación de alcance en software combina juicio experto, datos históricos y cada vez más inteligencia artificial. No existe una técnica única; los equipos exitosos combinan varias según el contexto \cite{velvetech}.
+
+\subsection{Planning Poker}
+
+Es el estándar de facto para estimación ágil detallada \cite{planningpoker}. Cada miembro del equipo usa cartas con valores Fibonacci (1, 2, 3, 5, 8, 13, 20...) para estimar la complejidad relativa de historias de usuario. Las cartas se revelan simultáneamente para evitar el sesgo de anclaje. Cuando hay diferencias grandes, se discute y se re-estima. Funciona mejor en planificación de sprint con equipos de 3 a 9 personas.
+
+\subsection{PERT}
+
+Incorporan incertidumbre explícitamente. Cada tarea recibe tres valores: Optimista (O), Más Probable (M) y Pesimista (P) \cite{tutorialspoint}. PERT aplica la fórmula ponderada:
+\[
+E = \frac{O + 4M + P}{6}
+\]
+Ideal para proyectos con alta incertidumbre donde el rango de resultados es amplio.
+
+\subsection{COCOMO}
+
+Aplica modelos estadísticos como COCOMO (Modelo Constructivo de Costos) que relacionan variables cuantificables (líneas de código, puntos de función) con esfuerzo y costo \cite{fastercapital}. Requiere datos históricos robustos.
+
+\subsection{Puntos de función}
+
+Gobernados por IFPUG y respaldados por la norma ISO 20926, son el estándar formal para medir el tamaño funcional del software \cite{tutorialspoint}. Analizan entradas externas, salidas, consultas, archivos lógicos internos e interfaces. Son independientes de tecnología pero laboriosos y con curva de aprendizaje pronunciada.
+
+\section{Plataformas y software}
+
+\subsection{Jira}
+
+Jira (Atlassian) sigue siendo la herramienta número uno para gestión ágil de proyectos de software \cite{unito}. Ofrece puntos de historia nativos, gráficos de velocidad, gráficos de avance y un ecosistema de más de 6,000 complementos incluyendo herramientas de Planning Poker (Async Poker, PlanningPoker.live). Su fortaleza es la profundidad de personalización; su debilidad es una curva de aprendizaje pronunciada \cite{clickup}.
+
+\subsection{Azure DevOps}
+
+Azure DevOps (Microsoft) destaca en entornos empresariales como solución integral: planificación, repositorios Git, pipelines de integración y entrega continua, y planificación de capacidad nativa. Su trazabilidad entre elementos de trabajo, compilaciones y versiones es superior, aunque sus reportes ágiles son menos sofisticados que los de Jira \cite{clickup}.
+
+\subsection{Linear}
+
+Linear se ha posicionado como la alternativa moderna para equipos de ingeniería, con una interfaz minimalista y ultrarrápida \cite{unito} (hasta 50\% más rápido que Jira) \cite{clickup}. Soporta puntos de historia, planificación de sprints y hojas de ruta. Ideal para empresas emergentes y equipos técnicos.
+
+\subsection{ClickUp y Monday.com}
+
+ClickUp y Monday.com compiten como plataformas integrales que combinan tareas, documentos, pizarras, metas y chat. ClickUp ofrece sprints con puntos de historia y gráficos de avance, más ClickUp Brain (IA) para generación de tareas \cite{appvizer}. Monday.com incluye bloques de IA que analizan datos pasados para sugerir líneas de tiempo realistas y detección proactiva de riesgos en portafolios.
+
+\section{Conclusión}
+
+Diferenciar el alcance de producto (qué se construye) del alcance de proyecto (cómo se construye) es necesario para evitar descontrol en presupuesto, tiempo y equipo. Para estimar el alcance existen técnicas como Planning Poker, PERT, COCOMO y puntos de función, cada una adecuada para distintos contextos. Herramientas como Jira, Azure DevOps, Linear o ClickUp facilitan la gestión de estas estimaciones, y la inteligencia artificial complementa cada vez más el juicio humano en este proceso.
