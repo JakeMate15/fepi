@@ -1,0 +1,161 @@
+\section{Introducción}
+
+Dominar la diferencia entre alcance de proyecto y alcance de producto es la base para evitar el \textbf{scope creep}, el enemigo número uno de los proyectos de software. El alcance de producto define \textbf{qué} se construye (features, funciones, requisitos); el alcance de proyecto define \textbf{cómo} se construye (trabajo, recursos, cronograma, presupuesto) \cite{deepprojectmanager}. Confundirlos genera descontrol. Este documento ofrece una guía práctica para entender, diferenciar y estimar ambos alcances en el contexto real de la industria del software.
+
+\section{Qué es el alcance de proyecto y qué incluye exactamente}
+
+El PMBOK (Project Management Institute) define el alcance de proyecto como \textbf{``el trabajo que se realiza para entregar un producto, servicio o resultado con las características y funciones especificadas''} \cite{pmbok}. En otras palabras, abarca todo el esfuerzo necesario para llevar el producto desde la idea hasta la entrega: tareas de desarrollo, reuniones, testing, documentación, gestión de cambios, capacitación y soporte.
+
+Un \textbf{scope statement} (declaración de alcance) típico para un proyecto de software incluye estos componentes:
+
+\begin{itemize}
+    \item La \textbf{descripción del proyecto} establece la justificación de negocio y la visión general.
+    \item Los \textbf{entregables} se dividen en entregables de producto (software funcional, APIs, código fuente) y entregables de gestión (plan de proyecto, reportes de avance, actas).
+    \item Las \textbf{exclusiones} documentan explícitamente lo que NO forma parte del proyecto \cite{projectmanager}.
+    \item Las \textbf{restricciones} definen los límites fijos: presupuesto, plazo, uso obligatorio de infraestructura existente.
+    \item Los \textbf{supuestos} recogen condiciones aceptadas como ciertas para planificar \cite{visor}.
+    \item Los \textbf{criterios de aceptación} establecen las condiciones para que los entregables se consideren completos.
+\end{itemize}
+
+\subsection{Work Breakdown Structure (WBS)}
+
+El componente estructural más importante es la \textbf{Work Breakdown Structure (WBS)}: una descomposición jerárquica de todo el trabajo \cite{mpug}. Para un e-commerce, por ejemplo, el nivel 1 es el proyecto completo; el nivel 2 son las fases (Análisis, Diseño, Desarrollo, Testing, Deployment); el nivel 3 son los módulos (Frontend, Backend, Base de Datos); y el nivel 4 son paquetes de trabajo específicos (pantalla de login, carrito de compras, pasarela de pago).
+
+\subsection{Ejemplo práctico: Plataforma E-Commerce}
+
+El alcance del proyecto incluiría análisis de requisitos con stakeholders, diseño UI/UX (wireframes, mockups, prototipos), desarrollo frontend y backend, integración con sistemas existentes, migración de datos legacy, testing (unitario, integración, UAT, performance), capacitación a usuarios, deployment, y soporte post-lanzamiento de 30 días. Todo esto es \textit{trabajo del proyecto}, no características del producto.
+
+En \textbf{metodologías ágiles}, el alcance del proyecto se traduce en el Sprint Backlog: el trabajo comprometido para cada iteración. La diferencia clave con waterfall es que en Agile \textbf{el alcance es variable} mientras tiempo y recursos son fijos \cite{atlassian}.
+
+\section{El alcance de producto define el QUÉ, no el CÓMO}
+
+El PMBOK define el alcance de producto como \textbf{``las características y funciones que caracterizan un producto, servicio o resultado''} \cite{izenbridge}. Mientras el alcance de proyecto se mide contra el plan de gestión, el alcance de producto se mide contra los \textbf{requisitos}: ¿cumple el software lo que se especificó? \cite{brainbok}
+
+El alcance de producto se compone de dos grandes bloques:
+
+\begin{itemize}
+    \item Los \textbf{requisitos funcionales} definen qué debe hacer el sistema: autenticación de usuarios, procesamiento de transacciones, búsqueda y filtrado, generación de reportes \cite{geeksforgeeks}. Se expresan típicamente como user stories: \textit{``Como comprador, quiero guardar mi tarjeta para pagos futuros''} \cite{altexsoft}.
+    \item Los \textbf{requisitos no funcionales} definen cómo debe comportarse: la página debe cargar en menos de 2 segundos, soportar \textbf{1,000 usuarios concurrentes}, garantizar \textbf{99.9\% de disponibilidad}, y funcionar en iOS 15+ y Android 12+.
+\end{itemize}
+
+Estos requisitos se organizan jerárquicamente en \textbf{Epics} (capacidades grandes como ``Sistema de pagos''), \textbf{Features} (funcionalidades como ``Pago con tarjeta de crédito'') y \textbf{User Stories} (unidades de trabajo del usuario). En Scrum, todo esto vive en el \textbf{Product Backlog}, una lista priorizada y dinámica propiedad del Product Owner \cite{scrumguides}.
+
+\subsection{Comparación: Alcance de producto vs. Alcance de proyecto}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Dimensión} & \textbf{Alcance de producto} & \textbf{Alcance de proyecto} \\
+\hline
+Pregunta que responde & ¿QUÉ se construye? & ¿CÓMO se construye? \\
+\hline
+Define & Features, funciones, requisitos & Tareas, recursos, presupuesto, cronograma \\
+\hline
+Se mide contra & Requisitos del producto & Plan de proyecto \\
+\hline
+Responsable & Product Owner / Stakeholders & Project Manager / Scrum Master \\
+\hline
+Documento clave & PRD, Product Backlog, SRS & Scope Statement, WBS, Sprint Backlog \\
+\hline
+Timing & Se establece primero & Se define después, basándose en el producto \\
+\hline
+\end{tabular}
+\caption{Comparación entre alcance de producto y alcance de proyecto.}
+\end{table}
+
+La regla de oro: \textbf{siempre se define el alcance de producto antes que el de proyecto}. El ``qué'' precede al ``cómo'' \cite{deepprojectmanager}.
+
+\section{Técnicas de estimación que usa la industria hoy}
+
+La estimación de alcance en software combina juicio experto, datos históricos y cada vez más inteligencia artificial. No existe una técnica única; los equipos exitosos combinan varias según el contexto \cite{velvetech}.
+
+\subsection{Planning Poker con Story Points}
+
+Es el estándar de facto para estimación ágil detallada \cite{planningpoker}. Cada miembro del equipo usa cartas con valores Fibonacci (1, 2, 3, 5, 8, 13, 20...) para estimar la complejidad relativa de user stories. Las cartas se revelan simultáneamente para evitar el sesgo de anclaje. Cuando hay diferencias grandes, se discute y se re-estima. Funciona mejor en sprint planning con equipos de \textbf{3 a 9 personas}. Su fortaleza es que fuerza discusiones productivas; su debilidad es que puede ser lento con backlogs extensos.
+
+\subsection{T-shirt Sizing}
+
+(XS, S, M, L, XL) es la técnica ideal para estimación de alto nivel: roadmaps, release planning, y trabajo con stakeholders no técnicos \cite{planningpoker}. Es intuitiva y rápida, pero carece de la precisión necesaria para planificación de sprints. Muchos equipos la usan como primera pasada y luego refinan con Planning Poker.
+
+\subsection{Wideband Delphi}
+
+Es la técnica formal de consenso experto. Un panel de 3-7 especialistas estima anónimamente en múltiples rondas, discutiendo las diferencias entre rondas hasta converger. Planning Poker es, de hecho, una evolución de esta técnica. Se usa cuando se necesita estimación formal a nivel de módulos o del proyecto completo.
+
+\subsection{Estimación de Tres Puntos y PERT}
+
+Incorporan incertidumbre explícitamente. Cada tarea recibe tres valores: Optimista (O), Más Probable (M) y Pesimista (P) \cite{tutorialspoint}. PERT aplica la fórmula ponderada:
+\[
+E = \frac{O + 4M + P}{6}
+\]
+Ideal para proyectos con alta incertidumbre donde el rango de resultados es amplio.
+
+\subsection{Affinity Estimation y Bucket System}
+
+Permiten procesar \textbf{100+ stories en menos de una hora}. En Affinity, el equipo agrupa stories silenciosamente por tamaño relativo en una pared o tablero digital, y luego asigna valores a los clusters \cite{techagilist}. En el Bucket System, se clasifican en cubetas numéricas predefinidas (0, 1, 2, 3, 5, 8, 13, 20, 40, 100). Ambas son excelentes para un backlog nuevo y extenso.
+
+\subsection{Estimación por Analogía y Estimación Paramétrica}
+
+La \textbf{estimación por analogía} (top-down) compara el proyecto actual con proyectos similares completados, usando datos históricos \cite{fastercapital}. La \textbf{estimación paramétrica} aplica modelos estadísticos como \textbf{COCOMO} (Constructive Cost Model) que relacionan variables cuantificables (líneas de código, puntos de función) con esfuerzo y costo \cite{fastercapital}. Ambas requieren datos históricos robustos.
+
+\subsection{Puntos de Función (Function Points)}
+
+Gobernados por IFPUG y respaldados por la norma \textbf{ISO 20926}, son el estándar formal para medir el tamaño funcional del software \cite{tutorialspoint}. Analizan entradas externas, salidas, consultas, archivos lógicos internos e interfaces. Son independientes de tecnología y excelentes para benchmarking, pero laboriosos y con curva de aprendizaje pronunciada.
+
+\section{Plataformas y software que dominan la estimación en 2025}
+
+\subsection{Jira}
+
+Jira (Atlassian) sigue siendo la herramienta número uno para gestión ágil de proyectos de software \cite{unito}. Ofrece story points nativos, velocity charts, burndown/burnup charts y un ecosistema de \textbf{6,000+ plugins} incluyendo herramientas de Planning Poker (Async Poker, PlanningPoker.live). Su fortaleza es la profundidad de personalización; su debilidad es una curva de aprendizaje pronunciada \cite{clickup}.
+
+\subsection{Azure DevOps}
+
+Azure DevOps (Microsoft) destaca en entornos enterprise como solución all-in-one: planning, repos Git, CI/CD pipelines y capacity planning nativo. Su trazabilidad entre work items, builds y releases es superior, aunque sus reportes ágiles son menos sofisticados que los de Jira \cite{clickup}.
+
+\subsection{Linear}
+
+Linear se ha posicionado como la alternativa moderna para equipos de ingeniería, con una interfaz minimalista y ultrarrápida \cite{unito} (hasta 50\% más rápido que Jira) \cite{clickup}. Soporta story points, sprint planning y roadmaps. Ideal para startups y equipos técnicos.
+
+\subsection{ClickUp y Monday.com}
+
+ClickUp y Monday.com compiten como plataformas all-in-one que integran tareas, documentos, whiteboards, metas y chat. ClickUp ofrece \textbf{ClickUp Sprints} con story points y burndown charts, más \textbf{ClickUp Brain} (IA) para generación de tareas e insights \cite{appvizer}. Monday.com incluye \textbf{AI Blocks} que analizan datos pasados para sugerir timelines realistas y Portfolio Risk Insights para detección proactiva de riesgos.
+
+\section{La IA está transformando la estimación de software}
+
+La tendencia más disruptiva de 2024-2025 es la entrada de la inteligencia artificial en la estimación de alcance. El modelo que predomina es híbrido: \textbf{la IA genera el baseline y los humanos revisan y ajustan} con contexto de negocio \cite{devtimate}.
+
+\textbf{Devtimate} permite subir RFPs, especificaciones o listas de features, y la IA extrae automáticamente módulos, tareas, roles, dependencias y rangos de horas estimadas. Reporta una precisión inicial del \textbf{85-90\%} que mejora a 95\%+ tras revisión humana. Exporta directamente a Jira, Asana o Excel.
+
+\textbf{CostGPT.ai}, entrenado en más de \textbf{2,000 proyectos}, genera planes de proyecto completos---features, user stories, milestones, costos y timeline---a partir de una descripción en lenguaje natural, con precisión reportada superior al 80\% \cite{costgpt}.
+
+\textbf{SLIM-Estimate} (QSM) es la opción enterprise para estimación paramétrica top-down, configurable para Agile, BI y package implementations, con base de datos propietaria de benchmarks.
+
+\subsection{Guía rápida de selección}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Contexto} & \textbf{Técnica recomendada} & \textbf{Herramienta sugerida} \\
+\hline
+Sprint planning detallado & Planning Poker + Story Points & Jira + PlanningPoker.live / Parabol \\
+\hline
+Backlog grande sin estimar & Affinity Estimation / T-shirt Sizing & Miro + Jira / Linear \\
+\hline
+Roadmap y release planning & T-shirt Sizing / Bucket System & Monday.com / ClickUp \\
+\hline
+Proyecto nuevo con poca información & Analogía + Tres Puntos & Devtimate (IA) / Excel \\
+\hline
+Cotización rápida en pre-venta & IA + Bottom-up & CostGPT / Devtimate \\
+\hline
+Enterprise formal & Function Points + Paramétrica & SLIM-Estimate / COCOMO \\
+\hline
+Definición formal de alcance & WBS + Scope Statement + PRD & MS Project + Jira + Confluence \\
+\hline
+\end{tabular}
+\caption{Guía de selección de técnicas y herramientas según el contexto.}
+\end{table}
+
+\section{Conclusión}
+
+La distinción entre alcance de producto y alcance de proyecto no es académica---es operativa \cite{deepprojectmanager2}. Confundirlos lleva a scope creep, presupuestos desbordados y equipos frustrados. El alcance de producto (qué se construye) siempre se define primero; el alcance de proyecto (cómo se construye) se deriva de él. La estimación efectiva combina múltiples técnicas: T-shirt Sizing o Affinity para la visión de alto nivel, Planning Poker para la granularidad del sprint, y herramientas de IA como Devtimate o CostGPT para generar baselines rápidos en fases tempranas. La tendencia de 2025 es clara: las estimaciones evolucionan de documentos estáticos a \textbf{``living estimates''} vinculadas directamente al backlog, donde la IA acelera el proceso pero el juicio humano sigue siendo insustituible para el contexto de negocio.
